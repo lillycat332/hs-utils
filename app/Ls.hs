@@ -29,7 +29,7 @@ main :: IO ()
 main = do
   args <- execParser opts
 
-  if argsAll args then mainWithArgs (getDirectoryContents) (argsDir args)
+  if argsAll args then Ex.catch (mainWithArgs (getDirectoryContents) (argsDir args)) (handler)
   else Ex.catch (mainWithArgs (listDirectory) (argsDir args)) (handler)
 
   where
