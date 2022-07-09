@@ -57,6 +57,21 @@ executable Cat
     , directory
   default-language: Haskell2010
 
+ 
+
+executable Rpn
+  main-is: Rpn.hs
+  other-modules:
+      Paths_hs_utils
+  hs-source-dirs:
+      app
+  ghc-options: -threaded -rtsopts -with-rtsopts=-N
+  build-depends:
+      base >=4.7 && <5
+    , hs-utils
+    , isocline
+  default-language: Haskell2010
+
 test-suite hs-utils-test
   type: exitcode-stdio-1.0
   main-is: Spec.hs
