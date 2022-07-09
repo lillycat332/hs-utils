@@ -23,11 +23,7 @@ args = Args <$>
   (  long "all"
   <> short 'a' 
   <> help "Show all files"
-  ) 
-
-filterBy :: String -> String -> Bool
-filterBy notAllowedChars = 
-    not . (`elem` notAllowedChars) . head . tail 
+  )
 
 main :: IO ()
 main = do
